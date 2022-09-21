@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
 import Logo from "../imgs/Dimona_COA.svg.png";
-import { SidebarData } from "../Data/Data";
+  import { SidebarData } from "../Data/Data";
 import { UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion";
 

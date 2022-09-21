@@ -1,10 +1,17 @@
-import React from 'react';
-import './app.css';
+import React from "react";
+import Updates from "../Updates/Updates";
+import "./RightSide.css";
+
+
 const RightSide = () => {
   return (
     <div className="RightSide">
-        text
+      <div>
+        <h3>Updates</h3>
+        <Updates />
+      </div>
     </div>
   );
 };
+
 export default RightSide;
