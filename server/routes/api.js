@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const Todo = require('../models/todo');
-router.get('/todos', (req, res, next) => {
-  // This will return all the data, exposing only the id and action field to the client
-  Todo.find({}, 'action')
+const Hazard = require('../models/hazardModel');
+
+router.get('/hazards', (req, res, next) => {
+  Hazard.find({})
     .then((data) => res.json(data))
     .catch(next);
 });
-router.post('/todos', (req, res, next) => {
-  if (req.body.action) {
-    Todo.create(req.body)
+
+router.post('/hazards', (req, res, next) => {
+if (req.body.type&&req.body.location&&req.body.date) {
+    Hazard.create(req.body)
       .then((data) => res.json(data))
       .catch(next);
   } else {
@@ -18,8 +19,8 @@ router.post('/todos', (req, res, next) => {
     });
   }
 });
-router.delete('/todos/:id', (req, res, next) => {
-  Todo.findOneAndDelete({ _id: req.params.id })
+router.delete('/hazards/:id', (req, res, next) => {
+  Hazard.findOneAndDelete({ _id: req.params.id })
     .then((data) => res.json(data))
     .catch(next);
 });

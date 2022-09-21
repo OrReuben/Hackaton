@@ -5,7 +5,7 @@ const routes = require('./routes/api');
 require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
-// Connect to the database
+
 mongoose
   .connect(process.env.DB, { useNewUrlParser: true })
   .then(() => console.log(`Database connected successfully`))
