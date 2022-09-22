@@ -7,6 +7,21 @@ router.get('/hazards', (req, res, next) => {
     .then((data) => res.json(data))
     .catch(next);
 });
+router.get('/hazardsDone', (req, res, next) => {
+  Hazard.find({ status: 'בוצע' })
+    .then((data) => res.json(data))
+    .catch(next);
+});
+router.get('/hazardsNotDone', (req, res, next) => {
+  Hazard.find({ status: 'לא בוצע' })
+    .then((data) => res.json(data))
+    .catch(next);
+});
+router.get('/hazardsPending', (req, res, next) => {
+  Hazard.find({ status: 'בביצוע' })
+    .then((data) => res.json(data))
+    .catch(next);
+});
 
 router.post('/hazards', (req, res, next) => {
 if (req.body.type&&req.body.location&&req.body.date) {

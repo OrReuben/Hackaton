@@ -11,7 +11,7 @@
   --activeItem: #f799a354;
 }
 
-.App {
+.App-light {
   /* padding: 0.5rem 3.5rem; */
   color: var(--black);
   background: linear-gradient(
@@ -26,27 +26,67 @@
   justify-content: center;
   font-family: 'Inter', sans-serif;
 }
+.App-dark {
+  /* padding: 0.5rem 3.5rem; */
+  color: var(--black);
+  background: linear-gradient(
+    106.37deg,
+    #485461 29.63%,
+    #28313B 51.55%,
+    #2A5470 90.85%
+  );
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+}
 
-.AppGlass {
+.AppGlass-light {
   display: grid;
-  height: 97%;
+  height: 95%;
   width: 97%;
   background: var(--glass);
   border-radius: 2rem;
   gap: 16px;
-  grid-template-columns: 11rem auto 20rem;
-  overflow: hidden;
+  grid-template-columns: 11rem auto 1rem;
+  overflow: hidden; 
+}
+.AppGlass-dark {
+  display: grid;
+  height: 95%;
+  width: 97%;
+  background: var(--gray);
+  border-radius: 2rem;
+  gap: 16px;
+  grid-template-columns: 11rem auto 1rem;
+  overflow: hidden; 
 }
 
 @media screen and (max-width: 1200px) {
-  .AppGlass{
-    grid-template-columns: 10% 50% auto;
+  .AppGlass-light{
+    grid-template-columns: 10% auto 1rem;
+    overflow-y: scroll;
+  } 
+  .AppGlass-dark{
+    grid-template-columns: 10% auto 1rem;
     overflow-y: scroll;
   } 
 }
 
 @media screen and (max-width: 768px) {
-  .AppGlass{
+  .AppGlass-light{
     grid-template-columns: 1fr;
-  } 
+}
+  .AppGlass-dark{
+    grid-template-columns: 1fr;
+}
+}
+@media screen and (max-width: 768px) {
+  .AppGlass-light{
+    grid-template-columns: 1fr;
+}
+  .AppGlass-dark{
+    grid-template-columns: 1fr;
+}
 }

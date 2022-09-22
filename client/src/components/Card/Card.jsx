@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import axios from 'axios'
 import "./Card.css";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -10,6 +11,45 @@ import Chart from "react-apexcharts";
 
 const Card = (props) => {
   const [expanded, setExpanded] = useState(false);
+  // const [hazards, setHazards] = useState([])
+  // const [hazardStatusDone, setHazardStatusDone] = useState([])
+  // const [hazardStatusNotDone, setHazardStatusNotDone] = useState([])
+  // const [hazardStatusPending, setHazardStatusPending] = useState([])
+
+  // const getHazards = () => {
+  //   axios.get("/api/hazards").then((res) => {
+  //     console.log(res.data);
+  //     res.data && setHazards(res.data);
+  //   });
+  // };
+  // const getHazardStatusDone = () => {
+  //   axios.get("/api/hazardsDone").then((res) => {
+  //     res.data && setHazardStatusDone(res.data);
+  //   });
+  // }
+  // const getHazardStatusNotDone = () => {
+  //   axios.get("/api/hazardsNotDone").then((res) => {
+  //     res.data && setHazardStatusNotDone(res.data);
+  //   });
+  // }
+  // const getHazardStatusPending = () => {
+  //   axios.get("/api/hazardsPending").then((res) => {
+  //     res.data && setHazardStatusPending(res.data);
+  //   });
+  // }
+  // const hazardPercentageDone =  Math.floor(((hazardStatusDone.length)/hazards.length)*100)
+  // console.log(hazardPercentageDone);
+  // const hazardPercentageNotDone =  Math.floor(((hazardStatusNotDone.length)/hazards.length)*100)
+  // console.log(hazardPercentageNotDone);
+  // const hazardPercentagePending =  Math.floor(((hazardStatusPending.length)/hazards.length)*100)
+  // console.log(hazardPercentagePending);
+  // useEffect(() => {
+  //   getHazards()
+  //   getHazardStatusDone()
+  //   getHazardStatusNotDone()
+  //   getHazardStatusPending()
+  // }, []);
+
   return (
     <AnimateSharedLayout>
       {expanded ? (
@@ -43,8 +83,8 @@ function CompactCard({ param, setExpanded }) {
       </div>
       <div className="detail">
         <Png />
-        <span>${param.value}</span>
-        <span>Last 24 hours</span>
+        <span>{param.value}</span>
+        <span>כל המשימות</span>
       </div>
     </motion.div>
   );

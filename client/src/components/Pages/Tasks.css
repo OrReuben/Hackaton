@@ -1,0 +1,22 @@
+.green{
+    background-color: lime;
+    border-radius: 10%;
+}
+.red{
+    background-color: tomato;
+    border-radius: 10%;
+}
+.yellow{
+    background-color: yellow;
+    border-radius: 10%;
+}
+#root > div > div{
+    padding-top:10px;
+    padding-bottom:10px
+}
+@media screen and (max-width: 500px){
+    #root > div > div{
+        width:80% !important;
+        justify-content: center !important;
+    }
+}

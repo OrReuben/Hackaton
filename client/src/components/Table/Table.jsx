@@ -15,7 +15,6 @@ export default function BasicTable() {
 
   const getHazards = () => {
     axios.get("/api/hazards").then((res) => {
-      console.log(res.data);
       res.data && setHazards(res.data);
     });
   };

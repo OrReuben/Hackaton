@@ -1,15 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './app.css';
-import MainDash from './components/MainDash/MainDash';
-import RightSide from './components/RightSide/RightSide';
-import Sidebar  from './components/Sidebar'
+import { Routes, Route } from 'react-router-dom'
+import Home from './components/Pages/Home.jsx'
+import Sidebar from './components/Sidebar';
+import Tasks from './components/Pages/Tasks';
+import Pi from './components/Pages/Pi';
 const App = () => {
-  return (
-    <div className="App">
-      <div className="AppGlass">
-      <Sidebar />
-      <MainDash />
-      <RightSide />
+  const [theme, setTheme] = useState('light');
+  const [themeText, setThemeText] = useState('light')
+
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+      setThemeText('dark')
+    } else {
+      setTheme('light');
+      setThemeText('light')
+    }
+  };
+  useEffect(() => {
+    document.body.className = theme
+  },[theme])
+return (
+  <div className={`App-${theme}`}>
+      <div className={`AppGlass-${theme}`}>
+        <Sidebar toggleTheme={toggleTheme} setTheme={setTheme} setThemeText={setThemeText} themeText={themeText} theme={theme}/>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/tasks" element={<Tasks  />}></Route>
+          <Route path="/pi" element={<Pi />}></Route>
+      </Routes>
       </div>
     </div>
   );
